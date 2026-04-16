@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo RHC — 50 Años Creando Calidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:    #091413;
+      --red:     #BF092F;
+      --light:   #E0D9D9;
+      --white:   #ffffff;
+      --mid:     #1a2c2b;
+      --muted:   #a09898;
+      --border:  rgba(224,217,217,0.15);
+      --font:    'Inter', system-ui, sans-serif;
+      --max:     1280px;
+      --ease:    cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; text-decoration: none; }
+    ul  { list-style: none; }
+
+    /* ─── Utility ──────────────────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      border: 1px solid var(--red);
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s var(--ease);
+      border-radius: 2px;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: #a00827;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--light);
+      border: 1.5px solid var(--border);
+    }
+    .btn-outline:hover {
+      border-color: var(--light);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    /* ─── Top Bar ──────────────────────────────────────────────── */
+    .topbar {
+      background: var(--mid);
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .topbar-left { display: flex; gap: 1.5rem; align-items: center; }
+    .topbar-right { display: flex; gap: 1.5rem; align-items: center; }
+
+    .topbar a:hover { color: var(--light); }
+
+    .topbar-divider {
+      width: 1px;
+      height: 14px;
+      background: var(--border);
+    }
+
+    /* ─── Header / Nav ─────────────────────────────────────────── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--dark);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--red);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.05em;
+    }
+
+    .logo-text {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text span { color: var(--red); }
+
+    nav { display: flex; align-items: center; gap: 0.25rem; }
+
+    nav a {
+      padding: 0.5rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      border-radius: 4px;
+      transition: color 0.2s var(--ease);
+      white-space: nowrap;
+    }
+
+    nav a:hover, nav a.active { color: var(--white); }
+
+    .header-actions { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+
+    /* ─── Hero ──────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(191,9,47,0.12) 0%, transparent 60%),
+        linear-gradient(135deg, var(--dark) 0%, #0e2120 100%);
+    }
+
+    /* Decorative grid lines */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 0.4;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--red);
+      display: block;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--red);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .hero-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+    }
+
+    .hero-card:hover {
+      border-color: rgba(191,9,47,0.4);
+      transform: translateY(-2px);
+    }
+
+    .hero-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      background: rgba(191,9,47,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-card-icon svg { width: 20px; height: 20px; stroke: var(--red); fill: none; stroke-width: 2; }
+
+    .hero-card h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-card p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .hero-card.featured {
+      grid-column: span 2;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    /* ─── Stats Bar ─────────────────────────────────────────────── */
+    .stats {
+      background: var(--mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 0;
+    }
+
+    .stats .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+    }
+
+    .stat-item {
+      padding: 0.75rem 2rem;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-number span { color: var(--red); }
+
+    .stat-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ─── About ─────────────────────────────────────────────────── */
+    .about {
+      padding: 7rem 0;
+    }
+
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--mid) 0%, #0d2322 100%);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .about-img-placeholder svg {
+      width: 64px;
+      height: 64px;
+      stroke: var(--border);
+      fill: none;
+      stroke-width: 1;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--red);
+      color: var(--white);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      min-width: 130px;
+    }
+
+    .about-badge strong {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .about-badge small {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .about-content { padding-left: 1rem; }
+
+    .about-list {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .check-icon {
+      flex-shrink: 0;
+      margin-top: 2px;
+      width: 18px;
+      height: 18px;
+      background: rgba(191,9,47,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .check-icon::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+    }
+
+    /* ─── Industries ────────────────────────────────────────────── */
+    .industries {
+      padding: 7rem 0;
+      background: var(--mid);
+    }
+
+    .industries .container { }
+
+    .industries-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3.5rem;
+      gap: 2rem;
+    }
+
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .industry-card {
+      position: relative;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      overflow: hidden;
+      transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+    }
+
+    .industry-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s var(--ease);
+    }
+
+    .industry-card:hover {
+      border-color: rgba(191,9,47,0.3);
+      transform: translateY(-4px);
+    }
+
+    .industry-card:hover::before { transform: scaleX(1); }
+
+    .industry-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(191,9,47,0.12);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .industry-icon svg { width: 26px; height: 26px; stroke: var(--red); fill: none; stroke-width: 1.8; }
+
+    .industry-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .industry-card p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .industry-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 1.25rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--red);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: gap 0.2s var(--ease);
+    }
+
+    .industry-link:hover { gap: 0.6rem; }
+
+    .industry-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+    /* ─── Products / Featured ───────────────────────────────────── */
+    .products {
+      padding: 7rem 0;
+    }
+
+    .products-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .products-header .section-sub {
+      margin: 0 auto;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: var(--mid);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+    }
+
+    .product-card:hover {
+      border-color: rgba(191,9,47,0.35);
+      transform: translateY(-4px);
+    }
+
+    .product-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #0d2322 0%, #142f2d 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .product-thumb svg { width: 48px; height: 48px; stroke: var(--border); fill: none; stroke-width: 1; }
+
+    .product-body { padding: 1.5rem; }
+
+    .product-cat {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-body h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .product-body p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--light);
+      letter-spacing: 0.03em;
+      transition: color 0.2s var(--ease), gap 0.2s var(--ease);
+    }
+
+    .product-link:hover { color: var(--white); gap: 0.65rem; }
+    .product-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+    /* ─── CTA Banner ────────────────────────────────────────────── */
+    .cta-banner {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, #0e1f1e 0%, var(--mid) 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(191,9,47,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-banner .container {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .cta-content h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-content p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    .cta-actions { display: flex; gap: 1rem; flex-direction: column; align-items: flex-end; }
+
+    /* ─── Blog ──────────────────────────────────────────────────── */
+    .blog { padding: 7rem 0; }
+
+    .blog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      gap: 2rem;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .blog-card {
+      background: var(--mid);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.25s var(--ease);
+    }
+
+    .blog-card:hover { border-color: rgba(191,9,47,0.35); }
+
+    .blog-thumb {
+      width: 100%;
+      aspect-ratio: 16/7;
+      background: linear-gradient(135deg, #0d2322 0%, #142f2d 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .blog-thumb.sm { aspect-ratio: 16/9; }
+
+    .blog-thumb svg { width: 40px; height: 40px; stroke: var(--border); fill: none; stroke-width: 1; }
+
+    .blog-body { padding: 1.5rem; }
+
+    .blog-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.03em;
+    }
+
+    .blog-meta span { color: var(--red); font-weight: 600; }
+
+    .blog-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.35;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-card.secondary h3 { font-size: 0.9rem; }
+
+    .blog-card p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .blog-side {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* ─── Contact Strip ─────────────────────────────────────────── */
+    .contact-strip {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+
+    .contact-strip .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contact-item-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: rgba(191,9,47,0.1);
+      border: 1px solid rgba(191,9,47,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-item-icon svg { width: 20px; height: 20px; stroke: var(--red); fill: none; stroke-width: 1.8; }
+
+    .contact-item-body h4 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-item-body p, .contact-item-body a {
+      font-size: 0.9rem;
+      color: var(--light);
+      line-height: 1.5;
+    }
+
+    .contact-item-body a:hover { color: var(--white); }
+
+    /* ─── Footer ────────────────────────────────────────────────── */
+    footer {
+      background: #050d0c;
+      border-top: 1px solid var(--border);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-top: 1rem;
+      max-width: 280px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+    }
+
+    .social-btn:hover { border-color: var(--light); color: var(--white); }
+
+    .footer-col h5 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul { display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .footer-col ul li a {
+      font-size: 0.85rem;
+      color: var(--muted);
+      transition: color 0.2s var(--ease);
+    }
+
+    .footer-col ul li a:hover { color: var(--light); }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-legal a {
+      font-size: 0.78rem;
+      color: var(--muted);
+      transition: color 0.2s var(--ease);
+    }
+
+    .footer-legal a:hover { color: var(--light); }
+
+    /* ─── Divider ───────────────────────────────────────────────── */
+    .red-line {
+      width: 48px;
+      height: 3px;
+      background: var(--red);
+      margin: 1rem 0 1.5rem;
+    }
+
+    /* ─── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .hero .container { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .about .container { grid-template-columns: 1fr; gap: 3rem; }
+      .about-content { padding-left: 0; }
+      .about-badge { bottom: -1rem; right: 0; }
+      .industries-grid { grid-template-columns: repeat(2, 1fr); }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .topbar .container { justify-content: center; }
+      .topbar-left { display: none; }
+      nav { display: none; }
+      .stats .container { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .industries-grid { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: 1fr; }
+      .cta-banner .container { grid-template-columns: 1fr; }
+      .cta-actions { align-items: flex-start; flex-direction: row; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .contact-strip .container { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .industries-header { flex-direction: column; align-items: flex-start; }
+      .blog-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Top Bar ──────────────────────────────────────────────── -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-left">
+        <a href="tel:+5714184577">PBX: (571) 418 4577</a>
+        <div class="topbar-divider"></div>
+        <a href="mailto:info@gruporhc.com">info@gruporhc.com</a>
+      </div>
+      <div class="topbar-right">
+        <a href="#">Portal Distribuidores</a>
+        <div class="topbar-divider"></div>
+        <a href="#">Tienda Virtual</a>
+        <div class="topbar-divider"></div>
+        <a href="#">ES</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Header ──────────────────────────────────────────────── -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo">
+        <div class="logo-mark">RHC</div>
+        <span class="logo-text">Grupo <span>RHC</span></span>
+      </a>
+      <nav>
+        <a href="#" class="active">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#industrias">Industrias</a>
+        <a href="#productos">Productos</a>
+        <a href="#">Outlet</a>
+        <a href="#">Blog</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#contacto" class="btn btn-primary">Solicitar Cotización</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── Hero ──────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">50 Años Creando Calidad</div>
+        <h1>Soluciones en<br />Conducción de<br /><em>Fluidos</em></h1>
+        <p class="hero-desc">
+          Fabricamos mangueras y sistemas de conducción de fluidos para la industria automotriz,
+          agrícola, industrial y de exploración. Calidad certificada, entrega confiable.
+        </p>
+        <div class="hero-actions">
+          <a href="#productos" class="btn btn-primary">Ver Productos</a>
+          <a href="#nosotros" class="btn btn-outline">Conocer Más</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-grid">
+          <div class="hero-card">
+            <div class="hero-card-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h4>Calidad Certificada</h4>
+            <p>Procesos controlados y materiales seleccionados.</p>
+          </div>
+          <div class="hero-card">
+            <div class="hero-card-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h4>Entrega Rápida</h4>
+            <p>Distribución nacional con tiempos optimizados.</p>
+          </div>
+          <div class="hero-card featured">
+            <div class="hero-card-icon" style="flex-shrink:0; width:52px; height:52px;">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div>
+              <h4>Portal de Mayoristas</h4>
+              <p>Accede a precios especiales, catálogos técnicos y soporte prioritario para distribuidores y grandes compradores.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Stats ────────────────────────────────────────────────── -->
+  <div class="stats">
+    <div class="container">
+      <div class="stat-item">
+        <div class="stat-number">50<span>+</span></div>
+        <div class="stat-label">Años de Experiencia</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">60<span>K</span></div>
+        <div class="stat-label">Clientes Suscritos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Sectores Industriales</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1<span>k+</span></div>
+        <div class="stat-label">Referencias de Producto</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── About ────────────────────────────────────────────────── -->
+  <section class="about" id="nosotros">
+    <div class="container">
+      <div class="about-visual">
+        <div class="about-img-placeholder">
+          <!-- Replace with real image: <img src="img/planta.jpg" alt="Planta de producción Grupo RHC" /> -->
+          <svg viewBox="0 0 64 64"><rect x="8" y="24" width="48" height="28" rx="2"/><polyline points="4 28 32 8 60 28"/><rect x="24" y="36" width="16" height="16"/></svg>
+        </div>
+        <div class="about-badge">
+          <strong>50</strong>
+          <small>Años en el<br />mercado</small>
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="tag">Quiénes Somos</span>
+        <h2 class="section-title">Expertos en fabricación de mangueras y conducción de fluidos</h2>
+        <div class="red-line"></div>
+        <p class="section-sub">
+          Grupo RHC es una empresa colombiana con más de 50 años de trayectoria en la fabricación
+          de mangueras de caucho y plástico para diversas aplicaciones industriales. Nuestros
+          procesos de producción controlados garantizan el más alto estándar de calidad.
+        </p>
+        <ul class="about-list">
+          <li>
+            <span class="check-icon"></span>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+          </li>
+          <li>
+            <span class="check-icon"></span>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+          </li>
+          <li>
+            <span class="check-icon"></span>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </li>
+          <li>
+            <span class="check-icon"></span>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+          </li>
+        </ul>
+        <div style="margin-top: 2.5rem;">
+          <a href="#nosotros" class="btn btn-primary">Conocer Nuestra Historia</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Industries ───────────────────────────────────────────── -->
+  <section class="industries" id="industrias">
+    <div class="container">
+      <div class="industries-header">
+        <div>
+          <span class="tag">Sectores</span>
+          <h2 class="section-title">Industrias que<br />Servimos</h2>
+        </div>
+        <p class="section-sub" style="max-width: 340px;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+      <div class="industries-grid">
+        <!-- Automotriz -->
+        <div class="industry-card">
+          <div class="industry-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M2 12h20M7 7l2-4h6l2 4"/></svg>
+          </div>
+          <h3>Automotriz</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+          <a href="#" class="industry-link">
+            Ver soluciones
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+        <!-- Agrícola -->
+        <div class="industry-card">
+          <div class="industry-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22V12M12 12C12 7 7 4 2 4c0 5 3 8 10 8zM12 12c0-5 5-8 10-8-1 5-4 8-10 8"/></svg>
+          </div>
+          <h3>Agrícola</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+          <a href="#" class="industry-link">
+            Ver soluciones
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+        <!-- Industrial -->
+        <div class="industry-card">
+          <div class="industry-icon">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>Industrial</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+          <a href="#" class="industry-link">
+            Ver soluciones
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+        <!-- Exploración -->
+        <div class="industry-card">
+          <div class="industry-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Exploración</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+          <a href="#" class="industry-link">
+            Ver soluciones
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Products ─────────────────────────────────────────────── -->
+  <section class="products" id="productos">
+    <div class="container">
+      <div class="products-header">
+        <span class="tag">Catálogo</span>
+        <h2 class="section-title">Productos Destacados</h2>
+        <p class="section-sub">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.
+        </p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-thumb">
+            <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20" stroke-dasharray="6 4"/><circle cx="32" cy="32" r="10"/></svg>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Automotriz</div>
+            <h3>Mangueras para Radiador</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#" class="product-link">
+              Ver Especificaciones
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-thumb">
+            <svg viewBox="0 0 64 64"><path d="M16 32 Q32 8 48 32 Q32 56 16 32z"/><circle cx="32" cy="32" r="6"/></svg>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Industrial</div>
+            <h3>Mangueras de Alta Presión</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#" class="product-link">
+              Ver Especificaciones
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-thumb">
+            <svg viewBox="0 0 64 64"><rect x="12" y="20" width="40" height="24" rx="4"/><line x1="12" y1="32" x2="52" y2="32"/><line x1="32" y1="20" x2="32" y2="44"/></svg>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Agrícola</div>
+            <h3>Mangueras para Riego</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#" class="product-link">
+              Ver Especificaciones
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="#" class="btn btn-outline">Ver Catálogo Completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA Banner ───────────────────────────────────────────── -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿Necesita una solución a la medida?</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a href="#contacto" class="btn btn-primary">Solicitar Cotización</a>
+        <a href="tel:+5714184577" class="btn btn-outline">Llamar Ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Blog ─────────────────────────────────────────────────── -->
+  <section class="blog">
+    <div class="container">
+      <div class="blog-header">
+        <div>
+          <span class="tag">Blog</span>
+          <h2 class="section-title">Últimas Noticias</h2>
+        </div>
+        <a href="#" class="btn btn-outline">Ver Todos los Artículos</a>
+      </div>
+      <div class="blog-grid">
+        <!-- Featured post -->
+        <div class="blog-card">
+          <div class="blog-thumb">
+            <svg viewBox="0 0 64 64"><rect x="8" y="12" width="48" height="36" rx="3"/><line x1="8" y1="24" x2="56" y2="24"/><circle cx="18" cy="18" r="3"/><circle cx="27" cy="18" r="3"/></svg>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span>Innovación</span>
+              <time>15 Mar 2026</time>
+            </div>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</h3>
+            <p style="margin-top:0.5rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+        </div>
+        <!-- Side posts -->
+        <div class="blog-side">
+          <div class="blog-card secondary">
+            <div class="blog-thumb sm">
+              <svg viewBox="0 0 64 64"><circle cx="32" cy="28" r="16"/><path d="M16 52c0-8.8 7.2-16 16-16s16 7.2 16 16"/></svg>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span>Industria</span>
+                <time>10 Mar 2026</time>
+              </div>
+              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+            </div>
+          </div>
+          <div class="blog-card secondary">
+            <div class="blog-thumb sm">
+              <svg viewBox="0 0 64 64"><path d="M32 8L56 44H8L32 8z"/><line x1="32" y1="28" x2="32" y2="38"/><circle cx="32" cy="42" r="1.5" fill="currentColor"/></svg>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span>Calidad</span>
+                <time>4 Mar 2026</time>
+              </div>
+              <h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact Strip ────────────────────────────────────────── -->
+  <section class="contact-strip" id="contacto">
+    <div class="container">
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="contact-item-body">
+          <h4>Dirección</h4>
+          <p>Carrera 127 #15B-40<br />Bogotá, Colombia</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="contact-item-body">
+          <h4>Teléfonos</h4>
+          <a href="tel:+5714184577">PBX: (571) 418 4577</a><br />
+          <a href="tel:+573505419736">(57) 350 541 9736</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="contact-item-body">
+          <h4>Correo Electrónico</h4>
+          <a href="mailto:info@gruporhc.com">info@gruporhc.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ───────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-mark">RHC</div>
+            <span class="logo-text">Grupo <span>RHC</span></span>
+          </a>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-btn">f</a>
+            <a href="#" class="social-btn">in</a>
+            <a href="#" class="social-btn">ig</a>
+            <a href="#" class="social-btn">yt</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Empresa</h5>
+          <ul>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Historia</a></li>
+            <li><a href="#">Sostenibilidad</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Trabaja con Nosotros</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Productos</h5>
+          <ul>
+            <li><a href="#">Automotriz</a></li>
+            <li><a href="#">Agrícola</a></li>
+            <li><a href="#">Industrial</a></li>
+            <li><a href="#">Exploración</a></li>
+            <li><a href="#">Outlet</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Soporte</h5>
+          <ul>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Portal Distribuidores</a></li>
+            <li><a href="#">Tienda Virtual</a></li>
+            <li><a href="#">Ficha Técnica</a></li>
+            <li><a href="#">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Grupo RHC. Todos los derechos reservados. Bogotá, Colombia.</p>
+        <div class="footer-legal">
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Términos de Uso</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

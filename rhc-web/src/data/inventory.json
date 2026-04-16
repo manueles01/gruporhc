@@ -1,0 +1,152 @@
+[
+    {
+        "oem_code": "97312-1Y100",
+        "rhc_code": "56583",
+        "target_qty": 5,
+        "description": "KIA PICANTO-ION MANGUERA CALEFACCION SALIDA [2012 EN ADELANTE] 16V"
+    },
+    {
+        "oem_code": "M08381H220",
+        "rhc_code": "55224",
+        "target_qty": 8,
+        "description": "DAIHATSU DELTA MANGUERA RADIADOR SUPERIOR [1994 EN ADELANTE] 5.7cc DIESEL"
+    },
+    {
+        "oem_code": "500130784",
+        "rhc_code": "55107",
+        "target_qty": 8,
+        "description": "CHEVROLET SUPER-CARRY MANGUERA RADIADOR INFERIOR 1.0cc"
+    },
+    {
+        "oem_code": null,
+        "rhc_code": "55223",
+        "target_qty": 4,
+        "description": "DAIHATSU DELTA BOMBA DE AGUA [1994 EN ADELANTE] 5.7cc"
+    },
+    {
+        "oem_code": "4158827",
+        "rhc_code": "55394",
+        "target_qty": 8,
+        "description": "FIAT POLSKI MANGUERA RADIADOR INFERIOR"
+    },
+    {
+        "oem_code": "115691974",
+        "rhc_code": "55201",
+        "target_qty": 6,
+        "description": "CHEVROLET COBALT MANGUERA RADIADOR INFERIOR [2012 EN ADELANTE] 1.8cc"
+    },
+    {
+        "oem_code": null,
+        "rhc_code": "56568",
+        "target_qty": 5,
+        "description": "KIA PREGIO MANGUERA RADIADOR SUPERIOR [1997-2015] 2.7cc, 3.0cc DIESEL"
+    },
+    {
+        "oem_code": "2541343031",
+        "rhc_code": "56882",
+        "target_qty": 5,
+        "description": "HYUNDAI GRACE [H100-VAN] MANGUERA RADIADOR INFERIOR [1994-2005] 2.5cc"
+    },
+    {
+        "oem_code": "1785278600",
+        "rhc_code": "55757",
+        "target_qty": 5,
+        "description": "CHEVROLET ALTO SUPERIOR RADIADOR"
+    },
+    {
+        "oem_code": null,
+        "rhc_code": "55611",
+        "target_qty": 8,
+        "description": "FORD ESCAPE MANGUERA RADIADOR INFERIOR [2001-2004] 3.0cc"
+    },
+    {
+        "oem_code": "8942388421",
+        "rhc_code": "55846",
+        "target_qty": 15,
+        "description": "CHEVROLET NKR DESCARGA-GASES [1997-2006] 2.8cc"
+    },
+    {
+        "oem_code": null,
+        "rhc_code": "55851",
+        "target_qty": 15,
+        "description": "CHEVROLET LUV-DIMAX ENFRIADOR DE ACEITE CORTA"
+    },
+    {
+        "oem_code": "F8C913895A",
+        "rhc_code": "55515",
+        "target_qty": 8,
+        "description": "MAZDA 626-ASAHI TAPA VÁLVULAS [DESFOGUE VÁLVULA PCV A MÚLTIPLE ADMISIÓN] [1989-1997] 1.8cc, 2.0cc"
+    },
+    {
+        "oem_code": "8COG-15602",
+        "rhc_code": "55493",
+        "target_qty": 4,
+        "description": "MAZDA 626-MATSURI MANGUERA RADIADOR INFERIOR [1993-1997] 2.0cc"
+    },
+    {
+        "oem_code": null,
+        "rhc_code": "56446",
+        "target_qty": 5,
+        "description": "MAZDA 626-MATSURI CALEFACCION"
+    },
+    {
+        "oem_code": "G503-15-185C",
+        "rhc_code": "56432",
+        "target_qty": 5,
+        "description": "FORD RANGER XL MANGUERA RADIADOR INFERIOR [2008-2014] 2.5cc"
+    },
+    {
+        "oem_code": "338515185",
+        "rhc_code": "55477",
+        "target_qty": 5,
+        "description": "MAZDA 323 MANGUERA RADIADOR SUPERIOR [1989-1996] 1.6cc"
+    },
+    {
+        "oem_code": "G60115536",
+        "rhc_code": "55505",
+        "target_qty": 8,
+        "description": "MAZDA B2200 REFRIGERACIÓN [PASO AGUA ENTRE TUBO REFRIGERACIÓN A ENTRADA ENFRIADOR ACEITE] [1990-1997]"
+    },
+    {
+        "oem_code": "Z60115185C-1",
+        "rhc_code": "56425",
+        "target_qty": 5,
+        "description": "MAZDA 3 MANGUERA RADIADOR INFERIOR # 1 VERSION [1.6cc]"
+    },
+    {
+        "oem_code": "Z601-15-186F",
+        "rhc_code": "56416",
+        "target_qty": 5,
+        "description": "MAZDA 3 MANGUERA RADIADOR SUPERIOR [2004-2014] 1.6cc"
+    },
+    {
+        "oem_code": "A-9015287382",
+        "rhc_code": "56671",
+        "target_qty": 4,
+        "description": "MERCEDES-BENZ SPRINTER-413 INTERCOOLER ENTRADA [2000-2013] 2.2cc, 2.3cc"
+    },
+    {
+        "oem_code": "2541143001",
+        "rhc_code": "56880",
+        "target_qty": 5,
+        "description": "HYUNDAI GRACE [H100-VAN] MANGUERA RADIADOR SUPERIOR [1994-2005] 2.5cc"
+    },
+    {
+        "oem_code": "2541121020",
+        "rhc_code": "55532",
+        "target_qty": 5,
+        "description": "HYUNDAI EXCEL MANGUERA RADIADOR SUPERIOR [1992-1995] 1.3cc"
+    },
+    {
+        "oem_code": "ME291586",
+        "rhc_code": "55373",
+        "target_qty": 6,
+        "description": "MITSUBISHI CANTER MANGUERA RADIADOR INFERIOR [FE639-FE85] [1996-2011] 3.9cc"
+    },
+    {
+        "oem_code": null,
+        "rhc_code": "56208",
+        "target_qty": 4,
+        "description": "MITSUBISHI CANTER MANGUERA RADIADOR INFERIOR [1996-2011] 2.9cc"
+    }
+]
